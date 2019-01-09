@@ -1,0 +1,59 @@
+\documentclass[10.5pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{ifpdf}
+\usepackage{mla}
+\usepackage{sidecap}
+\usepackage{setspace}
+\usepackage{subcaption}
+\usepackage[autopunct=true]{csquotes}
+\usepackage{mathptmx}
+
+\newenvironment*{singlespcquote}
+    {\begin{spacing}{1}\quote}
+    {\endquote\end{spacing}}
+
+\SetBlockEnvironment{singlespcquote}
+\SetCiteCommand{\cite}
+
+\usepackage{titlesec}
+\titleformat{\section}
+  {\normalfont\large\raggedright}{\thesection.}{1em}{}
+\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+
+\usepackage[nomarkers,figuresonly,nolists]{endfloat}
+\DeclareDelayedFloatFlavour{SCfigure}{figure}
+
+\usepackage{etoolbox}
+\appto\displayquote{\singlespacing}
+
+\renewcommand{\efloatseparator}{\mbox{}}
+\newcommand{\inputandref}[1]{\input{fig/#1.tex}\ref{fig:#1}}
+
+\setlength{\parindent}{0.25cm}
+\setlength{\parskip}{0em}
+
+\makeatletter
+\title{Vertical and Horizontal Dimensions of Religiom at the Frontier}\let\Title\@title
+\author{Matthew Moreno}
+\makeatother
+
+\begin{document}
+
+\begin{mla}{Matthew}{Moreno}{Alison Tracy Hale}{Honors 401}{February 28, 2017}{{ \Title}\vspace{-1ex}}
+
+\input{tex/introduction.tex}
+
+\input{tex/body1.tex}
+
+\input{tex/body2.tex}
+
+\input{tex/conclusion.tex}
+
+\newpage
+\bibliography{Mendeley}
+\bibliographystyle{apalike}
+
+
+\end{mla}
+
+\end{document}
